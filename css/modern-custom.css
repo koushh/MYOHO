@@ -5,16 +5,18 @@
 
 /* --- 1. MODERN FUNDAMENTALS & VARIABLES (Dark Mode Ready) --- */
 :root {
-    --bg-color: #fdfbf7; /* Warmer, premium off-white */
+    --bg-color: #fdfbf7;
+    /* Warmer, premium off-white */
     --text-primary: #2c2c2c;
     --text-secondary: #555;
     --card-bg-glass: rgba(255, 255, 255, 0.85);
     --card-border-glass: rgba(255, 255, 255, 0.6);
-    --accent-color: #C5A059; /* Refined Gold */
+    --accent-color: #C5A059;
+    /* Refined Gold */
     --accent-dark: #A38243;
-    --shadow-soft: 0 10px 40px -10px rgba(0,0,0,0.08);
+    --shadow-soft: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
     --shadow-hover: 0 20px 50px -12px rgba(60, 50, 30, 0.15);
-    
+
     /* Typography */
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Inter', sans-serif;
@@ -27,9 +29,9 @@
         --text-secondary: #ccc;
         --card-bg-glass: rgba(40, 40, 40, 0.85);
         --card-border-glass: rgba(255, 255, 255, 0.1);
-        --accent-color: #D4AF37; 
-        --shadow-soft: 0 15px 30px rgba(0,0,0,0.4);
-        --shadow-hover: 0 20px 40px rgba(0,0,0,0.6);
+        --accent-color: #D4AF37;
+        --shadow-soft: 0 15px 30px rgba(0, 0, 0, 0.4);
+        --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.6);
     }
 }
 
@@ -47,7 +49,12 @@ body {
     line-height: 1.7;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-heading);
     font-weight: 600;
     letter-spacing: -0.02em;
@@ -56,7 +63,8 @@ h1, h2, h3, h4, h5, h6 {
 /* --- NEW HERO SECTION --- */
 .hero-static {
     position: relative;
-    height: 90vh; /* Almost full screen but shows hint of next section */
+    height: 90vh;
+    /* Almost full screen but shows hint of next section */
     min-height: 600px;
     display: flex;
     align-items: center;
@@ -72,7 +80,8 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
     object-fit: cover;
     z-index: 0;
-    filter: brightness(0.7); /* Enhance text contrast */
+    filter: brightness(0.7);
+    /* Enhance text contrast */
 }
 
 .hero-content {
@@ -116,19 +125,31 @@ h1, h2, h3, h4, h5, h6 {
 .btn-hero:hover {
     background-color: var(--accent-dark);
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     color: #fff;
     text-decoration: none;
 }
 
 @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media (max-width: 768px) {
-    .hero-title { font-size: 3rem; }
-    .hero-static { height: 80vh; }
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-static {
+        height: 80vh;
+    }
 }
 
 /* --- 2. SMOOTH SCROLL ANIMATION --- */
@@ -149,7 +170,8 @@ h1, h2, h3, h4, h5, h6 {
 /* JS Fallback (in index.html) handles visibility if this fails */
 
 /* FIX: Force inner elements to be visible so the parent wrapper's animation controls them */
-.sbox-13, .bgheroing-1 {
+.sbox-13,
+.bgheroing-1 {
     opacity: 1 !important;
     transform: none !important;
 }
@@ -157,26 +179,42 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /* Stagger delay for grids (only works with JS observer fallback effectively, keep for safety) */
-.scroll-anim:nth-child(2) { transition-delay: 0.1s; }
-.scroll-anim:nth-child(3) { transition-delay: 0.2s; }
-.scroll-anim:nth-child(4) { transition-delay: 0.3s; }
+.scroll-anim:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.scroll-anim:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.scroll-anim:nth-child(4) {
+    transition-delay: 0.3s;
+}
 
 
 /* --- 3. GLASSMORPHISM & CARD EFFECTS (Modern 2026 Style) --- */
-.hover-zoom, .sbox-13, .sbox-10, .pricing-1-table, .blog-post {
+.hover-zoom,
+.sbox-13,
+.sbox-10,
+.pricing-1-table,
+.blog-post {
     transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease, background 0.3s;
     will-change: transform, box-shadow;
-    
+
     /* Glassmorphism Base */
     background: var(--card-bg-glass);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--card-border-glass);
-    border-radius: 12px; /* Softer corners */
-    overflow: hidden; /* Keeps content inside rounded corners */
+    border-radius: 12px;
+    /* Softer corners */
+    overflow: hidden;
+    /* Keeps content inside rounded corners */
 }
 
-.hover-zoom:hover, .sbox-13:hover, .blog-post:hover {
+.hover-zoom:hover,
+.sbox-13:hover,
+.blog-post:hover {
     transform: scale(1.02);
     box-shadow: var(--shadow-soft);
     z-index: 2;
@@ -185,10 +223,16 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Disable heavy blur on low-power devices if needed (CSS media query for pointer capabilities often proxies for device capability) */
 @media (hover: none) and (pointer: coarse) {
-    .hover-zoom, .sbox-13, .sbox-10, .pricing-1-table, .blog-post {
+
+    .hover-zoom,
+    .sbox-13,
+    .sbox-10,
+    .pricing-1-table,
+    .blog-post {
         backdrop-filter: none;
         -webkit-backdrop-filter: none;
-        background: var(--bg-color); /* Fallback to solid color */
+        background: var(--bg-color);
+        /* Fallback to solid color */
     }
 }
 
@@ -206,13 +250,16 @@ h1, h2, h3, h4, h5, h6 {
 .hover-zoom-img {
     overflow: hidden;
     display: block;
-    border-radius: 12px 12px 0 0; /* Match card radius if at top */
+    border-radius: 12px 12px 0 0;
+    /* Match card radius if at top */
 }
 
 .hover-zoom-img img {
-    transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); /* Slower, smoother zoom */
+    transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    /* Slower, smoother zoom */
     will-change: transform;
-    width: 100%; /* Ensure responsiveness */
+    width: 100%;
+    /* Ensure responsiveness */
     height: auto;
 }
 
@@ -225,9 +272,11 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
     border-radius: 12px 12px 0 0;
 }
+
 .zoom-on-hover {
     transition: transform 0.8s ease;
 }
+
 .sbox-10:hover .zoom-on-hover {
     transform: scale(1.1);
 }
@@ -235,38 +284,55 @@ h1, h2, h3, h4, h5, h6 {
 
 /* --- 6. CONTAINER QUERIES & RESPONSIVENESS (2026 Standard) --- */
 /* Example: Making cards responsive based on container width */
-.sbox-13-wrapper, .sbox-10-wrapper, .blog-section {
+.sbox-13-wrapper,
+.sbox-10-wrapper,
+.blog-section {
     container-type: inline-size;
 }
 
 @container (max-width: 400px) {
-    .sbox-13-txt h5, .sbox-10-txt h5 {
-        font-size: 1.1rem; /* Adjust text size for small containers */
+
+    .sbox-13-txt h5,
+    .sbox-10-txt h5 {
+        font-size: 1.1rem;
+        /* Adjust text size for small containers */
     }
+
     .btn {
-        width: 100%; /* Full width buttons in small containers */
+        width: 100%;
+        /* Full width buttons in small containers */
         margin-top: 10px;
     }
 }
 
 @media (max-width: 768px) {
     .btn {
-        min-height: 48px; /* Easier to tap */
+        min-height: 48px;
+        /* Easier to tap */
         display: inline-flex;
         align-items: center;
         justify-content: center;
     }
-    
+
     .wsmenu-list li a {
-        padding: 12px 15px; /* Bigger menu links */
+        padding: 12px 15px;
+        /* Bigger menu links */
     }
 }
 
 /* --- 7. TYPOGRAPHY LEGIBILITY & VARIABLE FONTS --- */
-body, p, h1, h2, h3, h4, h5, h6 {
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
-    font-feature-settings: "kern" 1, "liga" 1; /* Better kerning */
+    font-feature-settings: "kern" 1, "liga" 1;
+    /* Better kerning */
 }
 
 /* Headline Reveal Animation Support */
@@ -276,13 +342,18 @@ body, p, h1, h2, h3, h4, h5, h6 {
     background-repeat: no-repeat;
     -webkit-background-clip: text;
     background-clip: text;
-    -webkit-text-fill-color: transparent; 
+    -webkit-text-fill-color: transparent;
     animation: reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
 }
 
 @keyframes reveal {
-    0% { background-size: 0% 100%; }
-    100% { background-size: 100% 100%; }
+    0% {
+        background-size: 0% 100%;
+    }
+
+    100% {
+        background-size: 100% 100%;
+    }
 }
 
 
@@ -302,8 +373,10 @@ body, p, h1, h2, h3, h4, h5, h6 {
     min-height: 100%;
     width: auto;
     height: auto;
-    object-fit: cover; /* Ensures image covers area without distortion */
-    object-position: center; /* Centers the image */
+    object-fit: cover;
+    /* Ensures image covers area without distortion */
+    object-position: center;
+    /* Centers the image */
 }
 
 /* --- 9. MICRO-INTERACTIONS --- */
@@ -315,7 +388,8 @@ body, p, h1, h2, h3, h4, h5, h6 {
 }
 
 .btn:active {
-    transform: scale(0.98); /* Slight press effect */
+    transform: scale(0.98);
+    /* Slight press effect */
 }
 
 /* Links Underline Animation */
@@ -340,10 +414,20 @@ body, p, h1, h2, h3, h4, h5, h6 {
 
 /* --- 10. ACCESSIBILITY: REDUCED MOTION --- */
 @media (prefers-reduced-motion: reduce) {
-    *, ::before, ::after {
+
+    *,
+    ::before,
+    ::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
+}
+
+/* --- 11. PERFORMANCE HELPERS --- */
+.optimize-render {
+    content-visibility: auto;
+    contain-intrinsic-size: 1000px;
+    /* Estimate for section height to minimize scroll jumping */
 }

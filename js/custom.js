@@ -68,16 +68,19 @@
 		/*	Hero Text Rotator
 		/*----------------------------------------------------*/
 	
-		$('.hero-txt-rotator').flexslider({
-			animation: "fade",
-			controlNav: true,
-			directionNav: false,  
-			slideshowSpeed: 6000,   
-			animationSpeed: 700,  
-			start: function(slider){
-				$('body').removeClass('loading');
-			}
-		});
+	
+		if ($.fn.flexslider) {
+			$('.hero-txt-rotator').flexslider({
+				animation: "fade",
+				controlNav: true,
+				directionNav: false,  
+				slideshowSpeed: 6000,   
+				animationSpeed: 700,  
+				start: function(slider){
+					$('body').removeClass('loading');
+				}
+			});
+		}
 
 
 		/*----------------------------------------------------*/
@@ -550,29 +553,6 @@
 			5: 'This email address looks fake or invalid. Please enter a real email address'
 		};	
 
-<<<<<<< HEAD
-		/*----------------------------------------------------*/
-		/*	Scroll-based Reveal Animation for Service Boxes
-		/*----------------------------------------------------*/
 
-		// const observerOptions = {
-		// 	threshold: 0.1
-		// };
-
-		// const observer = new IntersectionObserver((entries) => {
-		// 	entries.forEach((entry, index) => {
-		// 		if (entry.isIntersecting) {
-		// 			setTimeout(() => {
-		// 				entry.target.style.opacity = '1';
-		// 				entry.target.style.transform = 'translateY(0)';
-		// 			}, index * 200); // Staggered delay
-		// 		}
-		// 	});
-		// }, observerOptions);
-
-		// const serviceBoxes = document.querySelectorAll('.sbox-13, .bgheroing-1');
-		// serviceBoxes.forEach(box => observer.observe(box));
-=======
->>>>>>> 67290b2f806ad57366c13bc7f92b0f3055f4fe3f
 
 	});
