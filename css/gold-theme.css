@@ -3587,6 +3587,24 @@ ol.digit-list p {
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .05);
   -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, .05);
   box-shadow: 0 5px 10px rgba(0, 0, 0, .05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.sbox-10:hover {
+  animation: zoom 0.8s ease-in-out;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .1);
+}
+
+.sbox-10 .btn {
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.sbox-10 .btn:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
 }
 
 .sbox-10-txt {
@@ -3607,11 +3625,23 @@ ol.digit-list p {
 }
 
 .sbox-13 {
-  background-position: bottom center;
   margin-bottom: 30px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
+  transition: transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  background-position: bottom right;
+}
+
+.sbox-13:hover {
+  /* Removed zoom animation for entrance reveal */
+}
+
+.bgheroing-1:hover {
+  /* Removed zoom animation for entrance reveal */
 }
 
 .sbox-13-txt {
@@ -3622,7 +3652,7 @@ ol.digit-list p {
 }
 
 #s13-1 {
-  background-image: url(../images/s13-1.png);
+  background-image: url(../images/products/niacinamide.png);
 }
 
 #s13-2 {
@@ -3638,10 +3668,16 @@ ol.digit-list p {
 }
 
 #bgheroing-1 {
-  background-image: url(../images/products/niab3.png);
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: right;
+  background-image: url(../images/products/niacinamide.png);
+}
+
+.bgheroing-1 {
+  transition: transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  background-size: 20%;
+  background-position: bottom right;
 }
 
 #bgheroing-2 {
@@ -6890,4 +6926,14 @@ img.insta-img {
 
 nav a#pull {
   display: none;
+}
+
+/* Zoom animation for service boxes */
+@keyframes zoom {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
 }

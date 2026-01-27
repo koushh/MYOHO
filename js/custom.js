@@ -550,5 +550,26 @@
 			5: 'This email address looks fake or invalid. Please enter a real email address'
 		};	
 
+		/*----------------------------------------------------*/
+		/*	Scroll-based Reveal Animation for Service Boxes
+		/*----------------------------------------------------*/
+
+		// const observerOptions = {
+		// 	threshold: 0.1
+		// };
+
+		// const observer = new IntersectionObserver((entries) => {
+		// 	entries.forEach((entry, index) => {
+		// 		if (entry.isIntersecting) {
+		// 			setTimeout(() => {
+		// 				entry.target.style.opacity = '1';
+		// 				entry.target.style.transform = 'translateY(0)';
+		// 			}, index * 200); // Staggered delay
+		// 		}
+		// 	});
+		// }, observerOptions);
+
+		// const serviceBoxes = document.querySelectorAll('.sbox-13, .bgheroing-1');
+		// serviceBoxes.forEach(box => observer.observe(box));
 
 	});
