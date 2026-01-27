@@ -550,6 +550,7 @@
 			5: 'This email address looks fake or invalid. Please enter a real email address'
 		};	
 
+<<<<<<< HEAD
 		/*----------------------------------------------------*/
 		/*	Scroll-based Reveal Animation for Service Boxes
 		/*----------------------------------------------------*/
@@ -571,5 +572,7 @@
 
 		// const serviceBoxes = document.querySelectorAll('.sbox-13, .bgheroing-1');
 		// serviceBoxes.forEach(box => observer.observe(box));
+=======
+>>>>>>> 67290b2f806ad57366c13bc7f92b0f3055f4fe3f
 
 	});
